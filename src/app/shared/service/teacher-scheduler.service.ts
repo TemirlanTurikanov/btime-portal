@@ -11,8 +11,8 @@ export class TeacherSchedulerService {
     constructor(private http: HttpClient) {
     }
 
-    getAllData(day, month, teacherId, year): Observable<any> {
-        return this.http.get(`${this.ROLES_CONTROL}/all/teacherId/${teacherId}?day=${day}&month=${month}&year=${year}`);
+    getAllData(teacherId, eduYear): Observable<any> {
+        return this.http.get(`${this.ROLES_CONTROL}/all/teacherId/${teacherId}?eduYear=${eduYear}`);
     }
 
 

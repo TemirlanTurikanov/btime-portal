@@ -18,7 +18,7 @@ export class TeacherSchedulerComponent implements OnInit {
     }
 
     getAllData() {
-        this.service.getAllData(1, 1, 1, 1).subscribe(res => {
+        this.service.getAllData(2, 'E2019_2020').subscribe(res => {
             this.dataSource = res;
         });
     }
