@@ -13,7 +13,8 @@ import {DashboardModule} from './pages/dashboard/dashboard.module';
 import {NotFoundComponent} from './pages/not-found/not-found.component';
 import {AuthModule} from './pages/auth/auth.module';
 import {NgxEchartsModule} from 'ngx-echarts';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {AuthInterceptor} from './auth.interceptor';
 
 @NgModule({
     declarations: [
@@ -36,7 +37,13 @@ import {HttpClientModule} from '@angular/common/http';
             echarts: () => import('echarts')
         })
     ],
-    providers: [],
+    providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthInterceptor,
+            multi: true
+        }
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

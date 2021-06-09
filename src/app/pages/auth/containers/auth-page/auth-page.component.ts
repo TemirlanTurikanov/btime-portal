@@ -1,32 +1,38 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component} from '@angular/core';
+import {Router} from '@angular/router';
 
-import { AuthService } from '../../services';
-import { routes } from '../../../../consts';
+import {AuthService} from '../../services';
+import {routes} from '../../../../consts';
 
 @Component({
-  selector: 'app-auth-page',
-  templateUrl: './auth-page.component.html',
-  styleUrls: ['./auth-page.component.scss']
+    selector: 'app-auth-page',
+    templateUrl: './auth-page.component.html',
+    styleUrls: ['./auth-page.component.scss']
 })
 export class AuthPageComponent {
-  public todayDate: Date = new Date();
-  public routers: typeof routes = routes;
+    public todayDate: Date = new Date();
+    public routers: typeof routes = routes;
+    varvar: any;
+    authCred = {
+        login: '',
+        password: ''
+    };
 
-  constructor(
-    private service: AuthService,
-    private router: Router
-  ) { }
+    constructor(
+        private service: AuthService,
+        private router: Router
+    ) {
+    }
 
-  public sendLoginForm(): void {
-    this.service.login();
+    public sendLoginForm(): void {
+        console.log(this.authCred);
+        this.service.login(this.authCred);
+        // this.router.navigate([this.routers.DASHBOARD]).then();
+    }
 
-    this.router.navigate([this.routers.DASHBOARD]).then();
-  }
+    public sendSignForm(): void {
+        this.service.sign();
 
-  public sendSignForm(): void {
-    this.service.sign();
-
-    this.router.navigate([this.routers.DASHBOARD]).then();
-  }
+        this.router.navigate([this.routers.DASHBOARD]).then();
+    }
 }
