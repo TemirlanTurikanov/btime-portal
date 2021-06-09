@@ -1,1 +1,18 @@
-<p>t-my-group-list works!</p>
+<mat-accordion [multi]="true">
+    <mat-expansion-panel *ngFor="let element of dataSource">
+        <mat-expansion-panel-header>
+            <mat-panel-title style="margin-left: 10%">
+                <p > {{element.lesson.group}} </p>
+            </mat-panel-title>
+            <mat-panel-description >
+                {{element.lesson.name}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-action-list style="text-align: center">
+            <h5>{{element.lesson.classRoom}}</h5>
+            <h5>{{element.lesson.teacher}}</h5>
+
+        </mat-action-list>
+    </mat-expansion-panel>
+</mat-accordion>

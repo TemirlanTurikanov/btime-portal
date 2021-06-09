@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TeacherMyGroupListService} from '../../../shared/service/teacher-mygrouplist.service';
 
 @Component({
   selector: 'app-t-my-group-list',
@@ -6,10 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./t-my-group-list.component.css']
 })
 export class TMyGroupListComponent implements OnInit {
-
-  constructor() { }
+  public dataSource = [];
+  panelOpenState = false;
+  constructor(private service: TeacherMyGroupListService) { }
 
   ngOnInit(): void {
+    this.getAllData();
+  }
+
+  getAllData() {
+    this.service.getMyGroupListData(2).subscribe(res => {
+      this.dataSource = res;
+    });
   }
 
 }
+
+
+
+
+
+

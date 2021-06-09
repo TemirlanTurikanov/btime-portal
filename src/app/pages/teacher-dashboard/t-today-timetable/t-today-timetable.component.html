@@ -1,15 +1,19 @@
-<mat-accordion>
-    <mat-expansion-panel *ngFor="let element of dataSource" class="mat-card">
+<mat-accordion [multi]="true">
+    <mat-expansion-panel *ngFor="let element of dataSource">
         <mat-expansion-panel-header>
-            <mat-panel-title class="mat-card-title">
-                {{element.time}}
+            <mat-panel-title style="margin-left: 10%">
+                <p > {{element.time}} </p>
             </mat-panel-title>
-            <mat-panel-description>
+            <mat-panel-description >
                 {{element.lesson.name}}
             </mat-panel-description>
         </mat-expansion-panel-header>
-        <p>{{element.lesson.classRoom}}</p>
-        <p>{{element.lesson.teacher}}</p>
-        <p>{{element.lesson.group}}</p>
+
+        <mat-action-list style="text-align: center">
+            <h5>{{element.lesson.group}}</h5>
+            <h5>{{element.lesson.classRoom}}</h5>
+            <h5>{{element.lesson.teacher}}</h5>
+
+        </mat-action-list>
     </mat-expansion-panel>
 </mat-accordion>

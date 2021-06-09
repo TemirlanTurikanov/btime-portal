@@ -14,6 +14,7 @@ import {TeacherSchedulerRoutingModule} from '../teacher-scheduler/teacher-schedu
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
         TMyGroupListComponent
     ],
     imports: [
-        CommonModule, TeacherDashboardRoutingModule, MatToolbarModule, SharedModule, MatTabsModule, MatCardModule, MatExpansionModule
+        CommonModule, TeacherDashboardRoutingModule, MatToolbarModule, SharedModule, MatTabsModule, MatCardModule, MatExpansionModule, MatListModule
     ],
     exports: [
         TTodayTimetableComponent,
