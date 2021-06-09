@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {StudentWsService} from '../../../shared/service/student-ws.service';
 
 @Component({
   selector: 'app-today-timetable',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./today-timetable.component.css']
 })
 export class TodayTimetableComponent implements OnInit {
+  toList = [];
 
-  constructor() { }
+  constructor(private studentWsService: StudentWsService) { }
 
   ngOnInit(): void {
+    this.getHotData();
   }
-
+  getHotData() {
+    this.studentWsService.getHotData(1).subscribe(res => {
+      this.toList = res;
+    });
+  }
 }

@@ -1,1 +1,21 @@
-<p>today-timetable works!</p>
+<h5>Бүгін 2 Қазан, Сәрсенб3</h5>
+<mat-expansion-panel *ngFor="let element of toList">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            {{element.title}}
+        </mat-panel-title>
+        <mat-panel-description>
+            {{element.summary}}
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <br>{{element.content.classRoom}}
+    <br>{{element.content.homeWork}}
+    <br>{{element.content.nextLesson}}
+    <br>{{element.content.attendance}}
+    <br>{{element.content.grade}}
+
+    <!--  <mat-action-row>-->
+    <!--    <button mat-button>Click me</button>-->
+    <!--  </mat-action-row>-->
+</mat-expansion-panel>
