@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TeacherWorkspaceService} from '../../shared/service/teacher-workspace.service';
 
 @Component({
   selector: 'app-teacher-dashboard',

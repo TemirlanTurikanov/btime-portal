@@ -1,1 +1,15 @@
-<p>t-today-timetable works!</p>
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let element of dataSource" class="mat-card">
+        <mat-expansion-panel-header>
+            <mat-panel-title class="mat-card-title">
+                {{element.time}}
+            </mat-panel-title>
+            <mat-panel-description>
+                {{element.lesson.name}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>{{element.lesson.classRoom}}</p>
+        <p>{{element.lesson.teacher}}</p>
+        <p>{{element.lesson.group}}</p>
+    </mat-expansion-panel>
+</mat-accordion>
