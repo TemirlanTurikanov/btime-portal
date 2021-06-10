@@ -8,22 +8,22 @@ import {TeacherJournalService} from '../../shared/service/teacher/teacher-journa
 })
 export class TeacherJournalComponent implements OnInit {
   public displayedColumns: string[] = ['1', '2', '3', '4'];
-  public dataSource = [];
-   // {order: '1',
-   //   student: 'Vova',
-   //   byl: '1',
-   //   grade: '100',
-   //   prim: 'krsava'},
-   //  {order: '1',
-   //    student: 'Vova',
-   //    byl: '1',
-   //    grade: '100',
-   //    prim: 'krsava'},
-   //  {order: '1',
-   //    student: 'Vova',
-   //    byl: '1',
-   //    grade: '100',
-   //    prim: 'krsava'}  ];
+  public dataSource = [
+   {ord: '1',
+     student: 'Vova',
+     byl: '1',
+     grade: '100',
+     prim: 'krsava'},
+    {ord: '2',
+      student: 'Vova',
+      byl: '1',
+      grade: '100',
+      prim: 'krsava'},
+    {ord: '3',
+      student: 'Vova',
+      byl: '1',
+      grade: '100',
+      prim: 'krsava'}  ];
 
   constructor(private service: TeacherJournalService) { }
 
