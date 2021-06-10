@@ -1,0 +1,22 @@
+.example-button-row1 {
+    display: flex;
+    width: 500px;
+    margin: 20px;
+    padding: 10px;
+    background-color: #6ccaee;
+    border: 1px solid red;
+    border-radius: 10px;
+    color: white;
+}
+
+.student{
+    color: white;
+}
+
+.studentD{
+    display: block;
+    background-color: #5f5ffa;
+    border-radius: 10px;
+    padding: 5px;
+}
+
