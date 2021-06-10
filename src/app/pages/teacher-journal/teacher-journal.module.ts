@@ -4,6 +4,8 @@ import {TeacherJournalComponent} from './teacher-journal.component';
 import {TeacherJournalRoutingModule} from './teacher-journal-routing.module';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {SharedModule} from '../../shared/shared.module';
+import {MatCardModule} from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import {SharedModule} from '../../shared/shared.module';
         CommonModule,
         TeacherJournalRoutingModule,
         MatToolbarModule,
-        SharedModule
+        SharedModule,
+        MatCardModule,
+        MatTableModule
     ]
 })
 export class TeacherJournalModule {
