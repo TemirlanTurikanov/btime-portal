@@ -11,6 +11,7 @@ import { YearPipe } from './pipes';
 import { AuthService, EmailService } from './services';
 import { LoginFormComponent, SignFormComponent } from './components';
 import { AuthGuard } from './guards';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AuthGuard } from './guards';
     MatButtonModule,
     MatInputModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatCardModule
   ],
   providers: [
     AuthService,
