@@ -42,6 +42,12 @@ const routes: Routes = [
         loadChildren: () => import('./pages/student-progress-list/student-progress-list.module').then(m => m.StudentProgressListModule)
     },
     {
+        path: 'student-pf',
+        pathMatch: 'full',
+        canActivate: [AuthGuard],
+        loadChildren: () => import('./pages/student-profile/student-profile.module').then(m => m.StudentProfileModule)
+    },
+    {
         path: 'teacher-sh',
         pathMatch: 'full',
         canActivate: [AuthGuard],
