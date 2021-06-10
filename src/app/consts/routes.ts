@@ -7,5 +7,6 @@ export enum routes {
     TEACHER_SH = '/teacher-sh',
     TEACHER_JOURNAL = '/teacher-journal',
     TEACHER_WS = '/teacher-dashboard',
+    STUDENT_PF = '/student-pf'
 
 }
