@@ -2,7 +2,7 @@
     <mat-card-header>
         <div mat-card-avatar ></div>
         <mat-card-title>{{lessonItem.name}}</mat-card-title>
-        <mat-card-subtitle *ngIf="!lessonItem.free">{{lessonItem.classRoom}},{{lessonItem.group}}, {{lessonItem.teacher}}</mat-card-subtitle>
+        <mat-card-subtitle *ngIf="!lessonItem.free">{{lessonItem.classRoom}},{{lessonItem.group}}, {{lessonItem.teacher}} {{lessonItem.teacherln}}, id - {{lessonItem.timetableId}} </mat-card-subtitle>
     </mat-card-header>
     <mat-card-actions *ngIf="!lessonItem.free">
         <button mat-button>ACTION 1</button>

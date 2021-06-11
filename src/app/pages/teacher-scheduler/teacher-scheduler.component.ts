@@ -7,7 +7,7 @@ import {TeacherSchedulerService} from '../../shared/service/teacher-scheduler.se
     styleUrls: ['./teacher-scheduler.component.scss']
 })
 export class TeacherSchedulerComponent implements OnInit {
-    public displayedColumns: string[] = ['1', '2', '3', '4', '5', '6'];
+    public displayedColumns: string[] = ['1', '2', '3', '4', '5', '6','7'];
     public dataSource = [];
 
     constructor(private service: TeacherSchedulerService) {

@@ -7,10 +7,7 @@ import {TeacherWorkspaceService} from '../../shared/service/teacher-workspace.se
   styleUrls: ['./teacher-dashboard.component.css']
 })
 export class TeacherDashboardComponent implements OnInit {
-
   constructor() { }
-
   ngOnInit(): void {
   }
-
 }

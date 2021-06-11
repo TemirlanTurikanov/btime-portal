@@ -12,6 +12,7 @@ import { AuthService, EmailService } from './services';
 import { LoginFormComponent, SignFormComponent } from './components';
 import { AuthGuard } from './guards';
 import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -20,16 +21,17 @@ import {MatCardModule} from '@angular/material/card';
     LoginFormComponent,
     SignFormComponent
   ],
-  imports: [
-    CommonModule,
-    AuthRoutingModule,
-    MatTabsModule,
-    MatButtonModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    FormsModule,
-    MatCardModule
-  ],
+    imports: [
+        CommonModule,
+        AuthRoutingModule,
+        MatTabsModule,
+        MatButtonModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        FormsModule,
+        MatCardModule,
+        MatIconModule
+    ],
   providers: [
     AuthService,
     EmailService,

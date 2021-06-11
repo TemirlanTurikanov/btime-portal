@@ -43,6 +43,12 @@
                             <app-t-lesson-item [lessonItem]="element.l5"></app-t-lesson-item>
                         </td>
                     </ng-container>
+                    <ng-container matColumnDef="7" class="material-table__table-row">
+                        <th mat-header-cell *matHeaderCellDef>Сенбi</th>
+                        <td mat-cell *matCellDef="let element" class="material-table__table-content">
+                            <app-t-lesson-item [lessonItem]="element.l6"></app-t-lesson-item>
+                        </td>
+                    </ng-container>
                     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>

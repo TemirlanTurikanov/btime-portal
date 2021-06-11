@@ -1,150 +1,169 @@
-@import "src/app/styles/colors";
-@import "src/app/styles/variables";
-@import "src/app/styles/font";
+body{
+  font-family: 'Roboto', sans-serif;
+  margin:0px !important;
+  overflow: hidden;
+}
+.add-btn{
+  position: fixed;
+  right: 25px;
+  bottom: 20Px;
+}
 
-.auth-page {
+/** form **/
+.form-wraper{
   width: 100%;
-  height: 100%;
-  display: flex;
+  margin-top: 2%;
+}
+.form-container{
+  width: 35%;
+  margin: auto;
+  padding-bottom: 24px !important;
+  display: block;
+  background: rgb(253, 253, 253);
+}
+.card {
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
 
-  @media (max-width: $medium) {
-    flex-direction: column;
-  }
+/** form header **/
+.form-header{
+  padding: 24px 0;
+}
+.form-title{
+  text-align: center;
+  font-weight: 200;
+  font-size: 2.5em;
+}
+.main-lock-icon{
+  width: 20%;
+  margin: 5px auto;
+  display: block;
+}
 
-  &__content-block {
-    width: 37%;
-    height: 100%;
-    background-color: $white;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+/** form body **/
+.form-body{
+  padding: 0 24px;
+}
+.justifier {
+  width: 100%;
+}
+.form-input{
+  margin-top: 24px;
+}
 
-    @media (max-width: $medium) {
-      width: 100%;
-    }
-  }
+/** form footer **/
+.form-footer{
+  padding: 24px;
+}
+.btn{
+  display: block;
+  width: 100%;
+  padding: 5% !important;
+  font-size: 1.5em;
+  font-weight: 200;
+  margin-top: 18px;
+}
+.custom-btn{
+  margin-bottom: 15px;
+  background: #3f51b5;
+  color: #fff;
+}
+.google-icon{
+  width: 6%;
+}
+.txt{
+  text-align: center;
+  color: #333;
+  margin: 10px auto !important;
+}
+.additional-link{
+  padding: 10px auto;
+  text-align: center;
+}
+a{
+  text-decoration: none;
+  color: rgb(42, 125, 219);
+}
 
-  &__content-wrapper {
-    width: 45%;
-    height: 100%;
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+/*
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
 
-    @media (max-width: $small) {
-      width: 70%;
-    }
+@media (min-width: 1281px) {
 
-    @media (min-width: $medium) and (max-width: $large){
-      width: 45%;
-    }
-  }
+}
 
-  &__group {
-    margin-top: 28px;
-  }
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
 
-  &__group-title {
-    font-size: 32px;
-    font-weight: $fw-normal;
-    margin-top: 37px;
-    letter-spacing: -0.7px;
-    text-align: center;
-    line-height: 37px;
-    color: $dark-grey;
-  }
+@media (min-width: 1025px) and (max-width: 1280px) {
 
-  &__group-sub-title {
-    font-size: $fs-large;
-    font-weight: $fw-normal;
-    margin-bottom: 60px;
-    letter-spacing: -0.5px;
-    text-align: center;
-    line-height: 24px;
-    color: $dark-grey;
-  }
+}
 
-  &__google-button-wrapper {
-    margin-top: 32px;
-    margin-bottom: 10px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
 
-  &__google-button {
+@media (min-width: 768px) and (max-width: 1024px) {
+  .form-container{
     width: 95%;
-    padding: 0;
-    box-shadow: 0 0 11px 0 $shadow-white, 0 0 0 -2px $shadow-grey, 0 1px 8px 0 $shadow-dark-grey;
+    margin: auto;
+    padding-bottom: 24px !important;
+    display: block;
+    background: rgb(253, 253, 253);
   }
-
-  &__google-button-icon {
-    width: 20px;
-    margin-right: 16px;
+  .btn{
+    font-size: 1em;
   }
+}
 
-  &__border-wrapper {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    margin: 32px 0;
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+
+ */
+@media (min-width: 481px) and (max-width: 767px) {
+  .form-container{
+    width: 95%;
+    margin: auto;
+    padding-bottom: 24px !important;
+    display: block;
+    background: rgb(253, 253, 253);
   }
-
-  &__border-line {
-    height: 1px;
-    width: 100%;
-    background-color: $light-grey;
-    opacity: 0.3;
+  .btn{
+    font-size: 1em;
   }
+}
 
-  &__border-title {
-    font-size: $fs-xs;
-    padding: 0 16px;
-    margin: 0;
-    color: $dark-grey
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+  .form-container{
+    width: 95%;
+    margin: auto;
+    padding-bottom: 24px !important;
+    display: block;
+    background: rgb(253, 253, 253);
   }
-
-  &__logo {
-    width: 63%;
-    height: 100%;
-    background-color: $blue;
-    display: flex;
-    align-items: center;
-
-    @media (max-width: $medium) {
-      display: none;
-    }
-  }
-
-  &__logo-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  &__logo-img {
-    margin-bottom: 50px;
-  }
-
-  &__logo-title {
-    font-size: 62px;
-    color: $white;
-    font-weight: 500;
-    letter-spacing: -1.5px;
-    line-height: 62px;
-  }
-
-  &__footer-title {
-    color: $blue;
-    font-size: 10px;
-    opacity: 0.7;
-    a {
-      text-decoration: none;
-      color: $blue;
-    }
+  .btn{
+    font-size: 1em;
   }
 }
