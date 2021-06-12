@@ -14,8 +14,8 @@ import { routes } from '../../../../consts';
 export class HeaderComponent {
   @Input() isMenuOpened: boolean;
   @Output() isShowSidebar = new EventEmitter<boolean>();
-  public user$: Observable<User>
-  public emails$: Observable<Email[]>
+  public user$: Observable<User>;
+  public emails$: Observable<Email[]>;
   public routers: typeof routes = routes;
 
   constructor(
