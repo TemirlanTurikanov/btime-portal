@@ -5,7 +5,10 @@
         <mat-card-subtitle *ngIf="!lessonItem.free">{{lessonItem.classRoom}},{{lessonItem.group}}, {{lessonItem.teacher}} {{lessonItem.teacherln}}, id - {{lessonItem.timetableId}} </mat-card-subtitle>
     </mat-card-header>
     <mat-card-actions *ngIf="!lessonItem.free">
-        <button mat-button>ACTION 1</button>
-        <button mat-button>ACTION 2</button>
+<!--        <button mat-button>ACTION 1</button>-->
+<!--        <button mat-button>ACTION 2</button>-->
+        <button (click)="goToDashboard()">
+            <span>Open journal</span>
+        </button>
     </mat-card-actions>
 </mat-card>

@@ -12,7 +12,7 @@ export class TeacherJournalService {
     constructor(private http: HttpClient) {
     }
 
-    getLessonJournal(): Observable<any> {
-        return this.http.get(`${this.STUDENT_WS_CONTROLLER}`);
+    getLessonJournal(journalId): Observable<any> {
+        return this.http.get(`${this.STUDENT_WS_CONTROLLER}/journalId/${journalId}`);
     }
 }

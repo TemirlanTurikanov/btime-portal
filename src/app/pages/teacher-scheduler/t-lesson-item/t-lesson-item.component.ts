@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {routes} from '../../../consts';
 
 @Component({
     selector: 'app-t-lesson-item',
@@ -7,11 +9,15 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class TLessonItemComponent implements OnInit {
     @Input() lessonItem: any;
+    public routers: typeof routes = routes;
 
-    constructor() {
+    constructor(private router: Router) {
     }
 
     ngOnInit(): void {
     }
 
+    goToDashboard() {
+        this.router.navigate([this.routers.TEACHER_JOURNAL]);
+    }
 }

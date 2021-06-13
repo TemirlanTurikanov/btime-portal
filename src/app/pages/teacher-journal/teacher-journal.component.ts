@@ -33,7 +33,7 @@ export class TeacherJournalComponent implements OnInit {
   }
 
   getLessonJournal(){
-    this.service.getLessonJournal().subscribe(res => {
+    this.service.getLessonJournal(1).subscribe(res => {
       this.dataSource = res;
       console.log(res);
     });
