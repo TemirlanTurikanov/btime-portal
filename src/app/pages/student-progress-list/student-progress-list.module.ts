@@ -8,6 +8,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {SharedModule} from '../../shared/shared.module';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {MatTabsModule} from '@angular/material/tabs';
         MatButtonModule,
         MatIconModule,
         SharedModule,
-        MatTabsModule
+        MatTabsModule,
+        MatTableModule
     ]
 })
 export class StudentProgressListModule {

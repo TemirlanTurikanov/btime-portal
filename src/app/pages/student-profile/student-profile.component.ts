@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {StudentProfileService} from '../../shared/service/student-profile.service';
+import {StudentProfileService} from '../../shared/service/student/student-profile.service';
 import {StudentModel} from '../../shared/model/student.module';
 
 @Component({
@@ -19,12 +19,13 @@ export class StudentProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getStudentById(1);
   }
 
   getStudentById(id: number): void {
     this.studentProfileService.getStudentById(1).subscribe(res => {
       this.studentModel = res;
-      this.name = 'cfasfc';
+      this.name = this.studentModel.firstName;
       this.birthdate = this.studentModel.birthdate;
     });
   }

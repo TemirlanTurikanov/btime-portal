@@ -1,0 +1,29 @@
+.mat-toolbar{
+    color: black;
+    justify-content: center;
+}
+
+.mat-toolbar h1{
+    color: black;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+table {
+    width: 100%;
+}
+
+.mat-header-cell{
+    text-align: center;
+    background-color: #536DFE;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 18px;
+    color: white;
+
+}
+
+.mat-cell{
+    text-align: center;
+}
+
+.materi{
+    border-radius: 10px;
+}

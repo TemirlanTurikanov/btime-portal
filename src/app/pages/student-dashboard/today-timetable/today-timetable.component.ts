@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {StudentWsService} from '../../../shared/service/student-ws.service';
+import {StudentWsService} from '../../../shared/service/student/student-ws.service';
 
 @Component({
   selector: 'app-today-timetable',

@@ -11,6 +11,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {TodayTimetableComponent} from './today-timetable/today-timetable.component';
 import {MyLessonsListComponent} from './my-lessons-list/my-lessons-list.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
         SharedModule,
         MatTabsModule,
         MatExpansionModule,
-        MatCardModule
+        MatCardModule,
+        MatTableModule
     ],
     exports: [
         TodayTimetableComponent,

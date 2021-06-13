@@ -24,7 +24,7 @@
   }
 
   &__content {
-    overflow-y: hidden;
+    overflow-y: scroll;
     overflow-x: scroll;
 
     @media (max-width: $small) {
@@ -37,31 +37,42 @@
   }
 
   &__table-row {
-    height: 64px;
+    height: 32px;
   }
 
   &__table-row-title {
-    color: $dark-grey;
+    text-align: center;
+    background-color: $blue;
     font-size: $fs-small;
     font-weight: $fw-lighter;
     line-height: 24px;
+    color: white;
     text-transform: uppercase;
-    padding: 16px;
+    padding: 1px;
   }
 
   &__table-content {
-    color: $dark-grey;
+    color: blue;
+
+
     font-size: $fs-small;
-    padding: 20px;
+    padding: 5px 0px;
+    width: 80px;
+    .secondary-text{
+      font-size:  23px;
+      text-align: center;
+      justify-content: center;
+    }
   }
 
   &__content-badge {
+
     width: fit-content;
     border-radius: 32px;
     color: $white;
     text-align: center;
-    padding: 5px 10px;
-    font-size: 13px;
+    padding: 5px 5px;
+    font-size: 10px;
     box-sizing: border-box;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-weight: $fw-lighter;
@@ -89,3 +100,15 @@ mat-menu {
 .declined {
   background-color: $pink;
 }
+
+.mat-toolbar{
+
+  color: black;
+  justify-content: center;
+}
+
+.mat-toolbar h1{
+  color: black;
+}
+
+

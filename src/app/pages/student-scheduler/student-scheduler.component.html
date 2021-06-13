@@ -1,42 +1,49 @@
 <app-layout>
+
     <mat-toolbar class="page-header" role="heading">
-        <h1>Student scheduler</h1>
+        <h1>Student's schedule</h1>
     </mat-toolbar>
 
     <div class="tables-wrapper">
         <mat-card class="material-table">
             <mat-card-content class="material-table__content">
                 <table mat-table [dataSource]="dataSource" class="material-table__table">
-                    <ng-container matColumnDef="1" class="material-table__table-row">
-                        <th mat-header-cell *matHeaderCellDef>#</th>
-                        <td mat-cell *matCellDef="let element" class="material-table__table-content">{{element.time}}</td>
+                    <ng-container matColumnDef="1" class="material-table__table-row-title">
+                        <th mat-header-cell *matHeaderCellDef class = "material-table__table-row-title" ><!--width="8%"-->Time</th>
+                        <td mat-cell *matCellDef="let element" class="material-table__table-content" >
+                            <mat-icon matPrefix
+                                      class="secondary-text">
+                                      schedule
+                            </mat-icon>
+                            {{element.time}}
+                        </td>
                     </ng-container>
-                    <ng-container matColumnDef="2" class="material-table__table-row">
-                        <th mat-header-cell *matHeaderCellDef>Mn</th>
+                    <ng-container matColumnDef="2" class="material-table__table-row" >
+                        <th mat-header-cell *matHeaderCellDef class = "material-table__table-row-title" >Monday</th>
                         <td mat-cell *matCellDef="let element" class="material-table__table-content">
                             <app-lesson-item [lessonItem]="element.l1"></app-lesson-item>
                         </td>
                     </ng-container>
                     <ng-container matColumnDef="3" class="material-table__table-row">
-                        <th mat-header-cell *matHeaderCellDef>Tu</th>
+                        <th mat-header-cell *matHeaderCellDef class = "material-table__table-row-title">Tuesday</th>
                         <td mat-cell *matCellDef="let element" class="material-table__table-content">
                             <app-lesson-item [lessonItem]="element.l2"></app-lesson-item>
                         </td>
                     </ng-container>
                     <ng-container matColumnDef="4" class="material-table__table-row">
-                        <th mat-header-cell *matHeaderCellDef>TH</th>
+                        <th mat-header-cell *matHeaderCellDef class = "material-table__table-row-title">Wednesday</th>
                         <td mat-cell *matCellDef="let element" class="material-table__table-content">
                             <app-lesson-item [lessonItem]="element.l3"></app-lesson-item>
                         </td>
                     </ng-container>
                     <ng-container matColumnDef="5" class="material-table__table-row">
-                        <th mat-header-cell *matHeaderCellDef>TT</th>
+                        <th mat-header-cell *matHeaderCellDef class = "material-table__table-row-title">Thursday</th>
                         <td mat-cell *matCellDef="let element" class="material-table__table-content">
                             <app-lesson-item [lessonItem]="element.l4"></app-lesson-item>
                         </td>
                     </ng-container>
                     <ng-container matColumnDef="6" class="material-table__table-row">
-                        <th mat-header-cell *matHeaderCellDef>Fr</th>
+                        <th mat-header-cell *matHeaderCellDef class = "material-table__table-row-title">Friday</th>
                         <td mat-cell *matCellDef="let element" class="material-table__table-content">
                             <app-lesson-item [lessonItem]="element.l5"></app-lesson-item>
                         </td>

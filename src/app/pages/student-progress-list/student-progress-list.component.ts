@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {StudentProgressListService} from '../../shared/service/student/student-progress-list.service';
 
 @Component({
   selector: 'app-student-progress-list',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentProgressListComponent implements OnInit {
 
-  constructor() { }
+  public displayedColumns: string[] = ['1', '2', '3', '4'];
+  public dataSource = []; //[ {ord: 'Algebra1', subject: 'teacher', homework: '25 room', garde: '11 A' }];
+
+  constructor(private studentProgressListService: StudentProgressListService) { }
 
   ngOnInit(): void {
+    this.getMyCources();
   }
 
+  getMyCources() {
+    this.studentProgressListService.getMyCources(1).subscribe(res => {
+      this.dataSource = res;
+    });
+  }
 }

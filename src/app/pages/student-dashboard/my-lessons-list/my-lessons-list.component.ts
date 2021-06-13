@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {StudentWsService} from "../../../shared/service/student-ws.service";
+import {StudentWsService} from "../../../shared/service/student/student-ws.service";
 
 @Component({
   selector: 'app-my-lessons-list',
   templateUrl: './my-lessons-list.component.html',
-  styleUrls: ['./my-lessons-list.component.css']
+  styleUrls: ['./my-lessons-list.component.scss']
 })
 export class MyLessonsListComponent implements OnInit {
-  list= []
-
+  list = [];
+  public displayedColumns: string[] = ['1'];
   constructor(private studentWsService: StudentWsService) { }
 
   ngOnInit(): void {

@@ -1,7 +1,14 @@
-{{lessonItem.name}}
+<!--{{lessonItem.name}}
 <br>
 {{lessonItem.teacher}}
 <br>
 {{lessonItem.classRoom}}
 <br>
-{{lessonItem.group}}
+{{lessonItem.group}}-->
+<mat-card  [style]="lessonItem.free?'background-color:green !important;':''">
+    <mat-card-header>
+        <div mat-card-avatar ></div>
+        <mat-card-title>{{lessonItem.name}}</mat-card-title>
+        <mat-card-subtitle *ngIf="!lessonItem.free">{{lessonItem.classRoom}},{{lessonItem.group}}, {{lessonItem.teacher}}</mat-card-subtitle>
+    </mat-card-header>
+</mat-card>

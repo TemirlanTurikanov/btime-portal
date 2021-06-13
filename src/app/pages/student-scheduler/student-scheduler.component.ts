@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {StudentTimetableService} from '../../shared/service/student/student-timetable.service';
 
 @Component({
     selector: 'app-student-scheduler',
@@ -7,6 +8,8 @@ import {Component, OnInit} from '@angular/core';
 })
 export class StudentSchedulerComponent implements OnInit {
     public displayedColumns: string[] = ['1', '2', '3', '4', '5', '6'];
+    //public dataSource =  [];
+
     public dataSource =  [
         {
             time: '08:55',
@@ -55,7 +58,16 @@ export class StudentSchedulerComponent implements OnInit {
     constructor() {
     }
 
+    /*constructor(private studentTimetableService: StudentTimetableService) {
+    }*/
+
     ngOnInit(): void {
     }
+
+    /*getAllData() {
+        this.studentTimetableService.getAllLessons(2, 'E2019_2020').subscribe(res => {
+            this.dataSource = res;
+        });
+    }*/
 
 }

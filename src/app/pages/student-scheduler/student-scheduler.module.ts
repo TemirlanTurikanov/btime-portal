@@ -15,6 +15,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {LessonItemComponent} from './lesson-item/lesson-item.component';
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import {LessonItemComponent} from './lesson-item/lesson-item.component';
         MatToolbarModule,
         MatPaginatorModule,
         MatFormFieldModule,
-        SharedModule
+        SharedModule,
+        MatListModule
     ],
     exports: [LessonItemComponent]
 })
