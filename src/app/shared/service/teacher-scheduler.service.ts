@@ -22,8 +22,8 @@ export class TeacherSchedulerService {
     };
 
 
-    getAllData(teacherId, eduYear): Observable<any> {
-        return this.http.get(`${this.ROLES_CONTROL}/all/teacherId/${teacherId}?eduYear=${eduYear}`, this.HTTP_OPTIONS());
+    getAllData(eduYear): Observable<any> {
+        return this.http.get(`${this.ROLES_CONTROL}/all?eduYear=${eduYear}`, this.HTTP_OPTIONS());
     }
 
 
