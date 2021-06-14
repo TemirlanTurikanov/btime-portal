@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TeacherWorkspaceService} from '../../../shared/service/teacher-workspace.service';
-import {MatExpansionModule} from '@angular/material/expansion';
 
 @Component({
     selector: 'app-t-today-timetable',
@@ -19,7 +18,7 @@ export class TTodayTimetableComponent implements OnInit {
     }
 
     getAllData() {
-        this.service.getWorkspaceData(2).subscribe(res => {
+        this.service.getWorkspaceData().subscribe(res => {
             this.dataSource = res;
         });
     }

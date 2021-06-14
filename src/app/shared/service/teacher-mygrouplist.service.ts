@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 @Injectable({
@@ -10,10 +10,21 @@ export class TeacherMyGroupListService {
 
     constructor(private http: HttpClient) {
     }
+// HTTP_OPTIONS
+    // tslint:disable-next-line:only-arrow-functions
+    private readonly HTTP_OPTIONS = function(): any {
+        return {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+                Authorization: localStorage.getItem('token')
+            })
+        };
+    };
 
-    getMyGroupListData(teacherId): Observable<any> {
-        return this.http.get(`${this.ROLES_CONTROL}/all/teacherId/${teacherId}`);
+    getMyGroupListData(): Observable<any> {
+        return this.http.get(`${this.ROLES_CONTROL}/all`, this.HTTP_OPTIONS());
     }
 
 
 }
+
