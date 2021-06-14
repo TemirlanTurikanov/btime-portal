@@ -9,12 +9,16 @@ import {TeacherSchedulerService} from '../../shared/service/teacher-scheduler.se
 export class TeacherSchedulerComponent implements OnInit {
     public displayedColumns: string[] = ['1', '2', '3', '4', '5', '6', '7'];
     public dataSource = [];
+    public curUser: any;
 
     constructor(private service: TeacherSchedulerService) {
     }
 
     ngOnInit(): void {
         this.getAllData();
+        this.curUser = JSON.parse(localStorage.getItem('user'));
+        console.log(JSON.parse(localStorage.getItem('user')).authorities);
+
     }
 
     getAllData() {

@@ -6,9 +6,9 @@
 
 </mat-list>
 
-<p class="sidebar-title">TEACHER</p>
+<p class="sidebar-title" *ngIf="roles.includes('TEACHER')">TEACHER</p>
 
-<mat-list>
+<mat-list *ngIf="roles.includes('TEACHER')">
     <mat-list-item routerLink="{{routes.TEACHER_WS}}" routerLinkActive="active">
         <mat-icon>assessment</mat-icon>
         РАБОЧЕЕ ПРОСТРАНСТВО
@@ -23,9 +23,9 @@
     </mat-list-item>
 </mat-list>
 
-<p class="sidebar-title">STUDENT</p>
+<p class="sidebar-title" *ngIf="roles.includes('STUDENT')">STUDENT</p>
 
-<mat-list>
+<mat-list *ngIf="roles.includes('student')">
     <mat-list-item routerLink="{{routes.STUDENT_WS}}" routerLinkActive="active">
         <mat-icon>assessment</mat-icon>
         Рабочее пространство
