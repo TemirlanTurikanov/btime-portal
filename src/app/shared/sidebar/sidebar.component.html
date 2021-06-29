@@ -25,7 +25,7 @@
 
 <p class="sidebar-title" *ngIf="roles.includes('STUDENT')">STUDENT</p>
 
-<mat-list *ngIf="roles.includes('student')">
+<mat-list *ngIf="roles.includes('STUDENT')">
     <mat-list-item routerLink="{{routes.STUDENT_WS}}" routerLinkActive="active">
         <mat-icon>assessment</mat-icon>
         Рабочее пространство
@@ -38,8 +38,8 @@
         <mat-icon>description</mat-icon>
         Дневник
     </mat-list-item>
-    <mat-list-item routerLink="{{routes.STUDENT_PF}}" routerLinkActive="active">
+    <!--<mat-list-item routerLink="{{routes.STUDENT_PF}}" routerLinkActive="active">
         <mat-icon>account_circle</mat-icon>
         Профиль
-    </mat-list-item>
+    </mat-list-item>-->
 </mat-list>

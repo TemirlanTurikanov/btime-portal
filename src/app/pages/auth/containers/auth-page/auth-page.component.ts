@@ -16,10 +16,8 @@ export class AuthPageComponent {
         password: 'admin'
     };
 
-    constructor(
-        private service: AuthService,
-        private router: Router
-    ) {
+    constructor(private service: AuthService,
+                private router: Router) {
     }
 
     public sendLoginForm(): void {
@@ -30,8 +28,15 @@ export class AuthPageComponent {
     }
 
     public sendSignForm(): void {
+
         this.service.sign();
 
         this.router.navigate([this.routers.DASHBOARD]).then();
+    }
+
+    submitLoginForToken(): void {
+        this.service.getTokenByUser(this.authCred.login, this.authCred.password).subscribe( res => {
+            console.log(res);
+        });
     }
 }

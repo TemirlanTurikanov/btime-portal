@@ -1,9 +1,9 @@
 [
   {
     "context": [
-      ""
+      "/gateway"
     ],
-    "target": "http://localhost:8080",
+    "target": "http://localhost:8762",
     "secure": false,
     "changeOrigin": true
   }

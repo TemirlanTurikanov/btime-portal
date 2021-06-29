@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
     providedIn: 'root'
 })
 export class AuthService {
-    private readonly AUTH_ENDPOINT = '/auth';
+    private readonly AUTH_ENDPOINT = '/api/authenticate';
     public routers: typeof routes = routes;
 
     constructor(private http: HttpClient,
@@ -28,7 +28,7 @@ export class AuthService {
     };
 
     private getCurrentUserInfo(): Observable<any> {
-        return this.http.get('/api/private/v1/token/current', this.HTTP_OPTIONS());
+        return this.http.get('/token/current', this.HTTP_OPTIONS());
     }
 
     public login(authCred): void {
@@ -39,12 +39,9 @@ export class AuthService {
                 localStorage.setItem('token', res.headers.get('Authorization'));
                 this.getCurrentUserInfo().subscribe(curUser => {
                     localStorage.setItem('user', JSON.stringify(curUser));
-
                     this.router.navigate([this.routers.DASHBOARD]).then();
-
                 });
             }
-
         });
 
     }
@@ -64,4 +61,16 @@ export class AuthService {
             lastName: 'Smith'
         });
     }
+
+    /**
+     * Get Token For Login
+     */
+    getTokenByUser(login: string, password: string): Observable<any> {
+        const authData = new FormData();
+        authData.append('username', login);
+        authData.append('password', password);
+        console.log(authData);
+        return this.http.post('http://localhost:8762/gateway/api/authenticate', authData, {observe: 'response', responseType: 'text'});
+    }
+
 }

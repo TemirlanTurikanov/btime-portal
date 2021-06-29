@@ -1,4 +1,3 @@
-
 <div class="form-wraper">
     <div class="form-container card">
         <div class="form-header">
@@ -7,16 +6,18 @@
 
         <div class="form-body">
             <mat-form-field class="justifier">
-                <input matInput placeholder="Email" type="text"  [(ngModel)]="authCred.login">
+                <input matInput placeholder="Email" type="text" [(ngModel)]="authCred.login">
             </mat-form-field>
             <mat-form-field class="justifier">
-                <input matInput placeholder="Password" type="password" class="form-input" [(ngModel)]="authCred.password">
+                <input matInput placeholder="Password" type="password" class="form-input"
+                       [(ngModel)]="authCred.password">
             </mat-form-field>
         </div>
 
         <div class="form-footer">
-            <button mat-raised-button class="btn custom-btn" (click)="sendLoginForm()">
-                <mat-icon></mat-icon> LOGIN
+            <button mat-raised-button class="btn custom-btn" (click)="submitLoginForToken()">
+                <mat-icon></mat-icon>
+                LOGIN
             </button>
         </div>
 
