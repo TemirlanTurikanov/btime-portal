@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import {TeacherWorkspaceService} from '../../shared/service/teacher-workspace.service';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-teacher-dashboard',
-  templateUrl: './teacher-dashboard.component.html',
-  styleUrls: ['./teacher-dashboard.component.css']
+    selector: 'app-teacher-dashboard',
+    templateUrl: './teacher-dashboard.component.html',
+    styleUrls: ['./teacher-dashboard.component.css']
 })
 export class TeacherDashboardComponent implements OnInit {
-  constructor() { }
-  ngOnInit(): void {
-  }
+    constructor() {
+    }
+
+    ngOnInit(): void {
+    }
 }

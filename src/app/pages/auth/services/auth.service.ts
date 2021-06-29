@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
     providedIn: 'root'
 })
 export class AuthService {
-    private readonly AUTH_ENDPOINT = '/api/authenticate';
+    private readonly AUTH_ENDPOINT = '/gateway/api/authenticate';
     public routers: typeof routes = routes;
 
     constructor(private http: HttpClient,
@@ -26,23 +26,30 @@ export class AuthService {
         };
     };
 
-    public getCurrentUserInfo(): Observable<any> {
-        return this.http.get('/gateway/timetable-service/token/current', this.HTTP_OPTIONS());
-    }
-
     public login(authCred): void {
-        this.http.post(this.AUTH_ENDPOINT, authCred, {observe: 'response'}).subscribe(res => {
+        const authData = new FormData();
+        authData.append('username', authCred.username);
+        authData.append('password', authCred.password);
+        this.http.post(this.AUTH_ENDPOINT, authData, {observe: 'response'}).subscribe(res => {
             console.log(res.status);
-            console.log(res.headers.get('Authorization'));
+
+            console.log(authData);
+            console.log(res.headers.get('authorization'));
             if (res.status === 200) {
-                localStorage.setItem('token', res.headers.get('Authorization'));
+                localStorage.setItem('token', res.headers.get('authorization'));
                 this.getCurrentUserInfo().subscribe(curUser => {
+                    console.log('User: ', curUser);
                     localStorage.setItem('user', JSON.stringify(curUser));
                     this.router.navigate([this.routers.DASHBOARD]).then();
                 });
             }
         });
 
+    }
+
+    public getCurrentUserInfo(): Observable<any> {
+        return this.http.get('/gateway/timetable-service/token/current', this.HTTP_OPTIONS());
+        return this.http.get('/gateway/timetable-service/token/current');
     }
 
     public signOut(): void {
@@ -54,12 +61,12 @@ export class AuthService {
     /**
      * Get Token For Login
      */
-    getTokenByUser(login: string, password: string): Observable<any> {
-        const authData = new FormData();
-        authData.append('username', login);
-        authData.append('password', password);
-        console.log(authData);
-        return this.http.post('/gateway/api/authenticate', authData, {observe: 'response', responseType: 'text'});
-    }
+    // getTokenByUser(login: string, password: string): Observable<any> {
+    //     const authData = new FormData();
+    //     authData.append('username', login);
+    //     authData.append('password', password);
+    //     console.log(authData);
+    //     return this.http.post('/gateway/api/authenticate', authData, {observe: 'response', responseType: 'text'});
+    // }
 
 }

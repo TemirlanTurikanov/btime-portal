@@ -12,18 +12,25 @@ export class TeacherSchedulerComponent implements OnInit {
     public curUser: any;
     public curLogin: any;
 
-    constructor(private service: TeacherSchedulerService) {
+    constructor(private teacherSchedulerService: TeacherSchedulerService) {
     }
 
     ngOnInit(): void {
         this.curLogin = JSON.parse(localStorage.getItem('user')).principal;
         this.getAllData();
+        this.getAllTimetable();
 
     }
 
     getAllData() {
-        this.service.getAllData( 'E2019_2020').subscribe(res => {
+        this.teacherSchedulerService.getAllData('E2019_2020').subscribe(res => {
             this.dataSource = res;
+        });
+    }
+
+    getAllTimetable(): void {
+        this.teacherSchedulerService.getAllTimetable().subscribe(res => {
+            console.log('All Schedule:', res);
         });
     }
 }

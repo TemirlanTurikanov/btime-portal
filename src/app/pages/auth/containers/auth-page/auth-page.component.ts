@@ -14,7 +14,7 @@ export class AuthPageComponent {
     public todayDate: Date = new Date();
     public routers: typeof routes = routes;
     public authCred = {
-        login: 'admin',
+        username: 'admin',
         password: 'admin'
     };
 
@@ -24,10 +24,14 @@ export class AuthPageComponent {
     }
 
     public sendLoginForm(): void {
-        console.log(this.authCred);
-        this.service.login(this.authCred);
-        //
-        //
+         // this.service.getTokenByUser(this.authCred.login, this.authCred.password).subscribe(res => {
+            // localStorage.setItem('token', res.headers.get('authorization'));
+
+            console.log(this.authCred);
+            this.service.login(this.authCred);
+
+            // this.router.navigate([this.routers.DASHBOARD]).then();
+        // });
     }
 
     public sendSignForm(): void {
@@ -35,15 +39,5 @@ export class AuthPageComponent {
         this.router.navigate([this.routers.DASHBOARD]).then();
     }
 
-    submitLoginForToken(): void {
-        this.service.getTokenByUser(this.authCred.login, this.authCred.password).subscribe(res => {
-            localStorage.setItem('token', res.headers.get('authorization'));
-            this.service.getCurrentUserInfo().subscribe(resUser => {
-                console.log('User: ', resUser);
-            });
-
-            this.router.navigate([this.routers.DASHBOARD]).then();
-        });
-    }
 
 }

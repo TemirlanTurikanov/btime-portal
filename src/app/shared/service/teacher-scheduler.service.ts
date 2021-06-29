@@ -26,5 +26,9 @@ export class TeacherSchedulerService {
         return this.http.get(`${this.ROLES_CONTROL}/all?eduYear=${eduYear}`, this.HTTP_OPTIONS());
     }
 
+    getAllTimetable(): Observable<any> {
+        return this.http.get('/gateway/timetable-service/timetable/all', this.HTTP_OPTIONS());
+    }
+
 
 }
