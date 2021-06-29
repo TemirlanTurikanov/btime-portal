@@ -7,12 +7,14 @@ import {Observable} from 'rxjs/dist/types';
 })
 
 export class TeacherJournalService {
-    private readonly STUDENT_WS_CONTROLLER = '/api/private/v1/teacher/journal/lesson';
+    private readonly STUDENT_WS_CONTROLLER = 'journal/api/private/v1/journal';
+    // private readonly STUDENT_WS_CONTROLLER = '/api/private/v1/teacher/journal/lesson';
 
     constructor(private http: HttpClient) {
     }
 
     getLessonJournal(journalId): Observable<any> {
-        return this.http.get(`${this.STUDENT_WS_CONTROLLER}/journalId/${journalId}`);
+        return this.http.get(`${this.STUDENT_WS_CONTROLLER}/id/${journalId}`);
+        // return this.http.get(`${this.STUDENT_WS_CONTROLLER}/journalId/${journalId}`);
     }
 }

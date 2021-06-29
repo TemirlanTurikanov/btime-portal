@@ -15,6 +15,7 @@ import {AuthModule} from './pages/auth/auth.module';
 import {NgxEchartsModule} from 'ngx-echarts';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AuthInterceptor} from './pages/auth/services/auth.interceptor';
+import {TeacherJournalService} from './shared/service/teacher/teacher-journal.service';
 
 @NgModule({
     declarations: [
@@ -28,6 +29,7 @@ import {AuthInterceptor} from './pages/auth/services/auth.interceptor';
         DashboardModule,
         BrowserAnimationsModule,
         RouterModule,
+        // RouterModule.forRoot([{path: '/teacher-journal/:journalId', component: TeacherJournalService}]),
         AppRoutingModule,
         ToastrModule.forRoot(),
         MatCardModule,
