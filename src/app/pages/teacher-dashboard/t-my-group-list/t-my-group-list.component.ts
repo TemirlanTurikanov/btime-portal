@@ -16,7 +16,7 @@ export class TMyGroupListComponent implements OnInit {
   }
 
   getAllData() {
-    this.service.getMyGroupListData(2).subscribe(res => {
+    this.service.getMyGroupListData().subscribe(res => {
       this.dataSource = res;
     });
   }
