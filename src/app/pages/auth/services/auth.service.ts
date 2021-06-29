@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
 
-import {User} from '../models';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {routes} from '../../../consts';
 import {Router} from '@angular/router';
@@ -27,8 +26,8 @@ export class AuthService {
         };
     };
 
-    private getCurrentUserInfo(): Observable<any> {
-        return this.http.get('/token/current', this.HTTP_OPTIONS());
+    public getCurrentUserInfo(): Observable<any> {
+        return this.http.get('/gateway/timetable-service/token/current', this.HTTP_OPTIONS());
     }
 
     public login(authCred): void {
@@ -46,21 +45,11 @@ export class AuthService {
 
     }
 
-    public sign(): void {
-        localStorage.setItem('token', 'token');
-    }
-
     public signOut(): void {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
     }
 
-    public getUser(): Observable<User> {
-        return of({
-            name: 'John',
-            lastName: 'Smith'
-        });
-    }
 
     /**
      * Get Token For Login
@@ -70,7 +59,7 @@ export class AuthService {
         authData.append('username', login);
         authData.append('password', password);
         console.log(authData);
-        return this.http.post('http://localhost:8762/gateway/api/authenticate', authData, {observe: 'response', responseType: 'text'});
+        return this.http.post('/gateway/api/authenticate', authData, {observe: 'response', responseType: 'text'});
     }
 
 }

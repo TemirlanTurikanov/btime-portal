@@ -10,7 +10,7 @@ export class TeacherSchedulerComponent implements OnInit {
     public displayedColumns: string[] = ['1', '2', '3', '4', '5', '6', '7'];
     public dataSource = [];
     public curUser: any;
-    public curLogin : any;
+    public curLogin: any;
 
     constructor(private service: TeacherSchedulerService) {
     }

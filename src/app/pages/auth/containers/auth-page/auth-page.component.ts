@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from '../../services';
 import {routes} from '../../../../consts';
+import {HttpClient} from '@angular/common/http';
+import {error} from '@angular/compiler/src/util';
 
 @Component({
     selector: 'app-auth-page',
@@ -17,6 +19,7 @@ export class AuthPageComponent {
     };
 
     constructor(private service: AuthService,
+                private http: HttpClient,
                 private router: Router) {
     }
 
@@ -29,14 +32,18 @@ export class AuthPageComponent {
 
     public sendSignForm(): void {
 
-        this.service.sign();
-
         this.router.navigate([this.routers.DASHBOARD]).then();
     }
 
     submitLoginForToken(): void {
-        this.service.getTokenByUser(this.authCred.login, this.authCred.password).subscribe( res => {
-            console.log(res);
+        this.service.getTokenByUser(this.authCred.login, this.authCred.password).subscribe(res => {
+            localStorage.setItem('token', res.headers.get('authorization'));
+            this.service.getCurrentUserInfo().subscribe(resUser => {
+                console.log('User: ', resUser);
+            });
+
+            this.router.navigate([this.routers.DASHBOARD]).then();
         });
     }
+
 }

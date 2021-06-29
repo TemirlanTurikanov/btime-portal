@@ -1,5 +1,6 @@
 <mat-list>
-    <mat-list-item routerLink="{{routes.DASHBOARD}}" routerLinkActive="active">
+    <mat-list-item >
+<!--            routerLink="{{routes.DASHBOARD}}" routerLinkActive="active">-->
         <mat-icon>home</mat-icon>
         Dashboard
     </mat-list-item>
@@ -8,16 +9,19 @@
 
 <p class="sidebar-title" *ngIf="roles.includes('TEACHER')">TEACHER</p>
 
-<mat-list *ngIf="roles.includes('TEACHER')">
-    <mat-list-item routerLink="{{routes.TEACHER_WS}}" routerLinkActive="active">
+<mat-list> <!-- *ngIf="roles.includes('TEACHER')">-->
+    <mat-list-item >
+<!--            routerLink="{{routes.TEACHER_WS}}" routerLinkActive="active">-->
         <mat-icon>assessment</mat-icon>
         РАБОЧЕЕ ПРОСТРАНСТВО
     </mat-list-item>
-    <mat-list-item routerLink="{{routes.TEACHER_SH}}" routerLinkActive="active">
+    <mat-list-item>
+<!--            routerLink="{{routes.TEACHER_SH}}" routerLinkActive="active">-->
         <mat-icon>event</mat-icon>
         РАСПИСАНИЕ
     </mat-list-item>
-    <mat-list-item routerLink="{{routes.TEACHER_JOURNAL}}" routerLinkActive="active">
+    <mat-list-item >
+<!--            routerLink="{{routes.TEACHER_JOURNAL}}" routerLinkActive="active">-->
         <mat-icon>view_list</mat-icon>
         ЖУРНАЛ
     </mat-list-item>
@@ -25,16 +29,20 @@
 
 <p class="sidebar-title" *ngIf="roles.includes('STUDENT')">STUDENT</p>
 
-<mat-list *ngIf="roles.includes('STUDENT')">
-    <mat-list-item routerLink="{{routes.STUDENT_WS}}" routerLinkActive="active">
+<mat-list >
+<!--        *ngIf="roles.includes('STUDENT')">-->
+    <mat-list-item >
+<!--        routerLink="{{routes.STUDENT_WS}}" routerLinkActive="active">-->
         <mat-icon>assessment</mat-icon>
         Рабочее пространство
     </mat-list-item>
-    <mat-list-item routerLink="{{routes.STUDENT_SH}}" routerLinkActive="active">
+    <mat-list-item >
+<!--        routerLink="{{routes.STUDENT_SH}}" routerLinkActive="active">-->
         <mat-icon>event</mat-icon>
         Расписание
     </mat-list-item>
-    <mat-list-item routerLink="{{routes.STUDENT_PL}}" routerLinkActive="active">
+    <mat-list-item>
+<!--        routerLink="{{routes.STUDENT_PL}}" routerLinkActive="active">-->
         <mat-icon>description</mat-icon>
         Дневник
     </mat-list-item>

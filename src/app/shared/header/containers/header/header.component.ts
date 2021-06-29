@@ -23,7 +23,7 @@ export class HeaderComponent {
     private emailService: EmailService,
     private router: Router
   ) {
-    this.user$ = this.userService.getUser();
+    // this.user$ = this.userService.getUser();
     this.emails$ = this.emailService.loadEmails();
   }
 
