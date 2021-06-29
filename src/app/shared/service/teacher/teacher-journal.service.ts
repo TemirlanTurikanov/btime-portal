@@ -14,7 +14,7 @@ export class TeacherJournalService {
     }
 
     getLessonJournal(journalId): Observable<any> {
-        return this.http.get(`${this.STUDENT_WS_CONTROLLER}/id/${journalId}`);
+        return this.http.get(`${this.STUDENT_WS_CONTROLLER}/lesson/journalId/${journalId}`);
         // return this.http.get(`${this.STUDENT_WS_CONTROLLER}/journalId/${journalId}`);
     }
 }
