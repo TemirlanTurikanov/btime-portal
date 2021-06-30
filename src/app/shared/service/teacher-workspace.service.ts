@@ -19,8 +19,10 @@ export class TeacherWorkspaceService {
             })
         };
     };
+
     getWorkspaceData(): Observable<any> {
-        return this.http.get(`${this.ROLES_CONTROL}/all`, this.HTTP_OPTIONS());
+        const login = JSON.parse(localStorage.getItem('user'));
+        return this.http.get(`${this.ROLES_CONTROL}/all?login=${login}`, this.HTTP_OPTIONS());
     }
 
 
