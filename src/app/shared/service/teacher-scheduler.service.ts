@@ -6,7 +6,7 @@ import {Observable} from 'rxjs';
     providedIn: 'root'
 })
 export class TeacherSchedulerService {
-    private readonly ROLES_CONTROL = '/api/private/v1/scheduler/teacher';
+    private readonly ROLES_CONTROL = '/gateway/timetable-service/teacher_scheduler';
 
     constructor(private http: HttpClient) {
     }
