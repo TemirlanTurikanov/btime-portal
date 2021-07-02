@@ -6,7 +6,7 @@ import {Observable} from 'rxjs';
     providedIn: 'root'
 })
 export class TeacherWorkspaceService {
-    private readonly ROLES_CONTROL = '/api/private/v1/workspace/teacher';
+    private readonly ROLES_CONTROL = '/gateway/timetable-service/teacher/workspace';
 
     constructor(private http: HttpClient) {
     }
@@ -19,8 +19,10 @@ export class TeacherWorkspaceService {
             })
         };
     };
+
     getWorkspaceData(): Observable<any> {
-        return this.http.get(`${this.ROLES_CONTROL}/all`, this.HTTP_OPTIONS());
+        const login = JSON.parse(localStorage.getItem('user'));
+        return this.http.get(`${this.ROLES_CONTROL}/all?login=${login}`, this.HTTP_OPTIONS());
     }
 
 

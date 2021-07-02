@@ -23,13 +23,15 @@ export class TeacherSchedulerComponent implements OnInit {
     }
 
     getAllData() {
-        this.teacherSchedulerService.getAllData('E2019_2020').subscribe(res => {
+        this.teacherSchedulerService.getAllData( 'E2019_2020').subscribe(res => {
             this.dataSource = res;
+            console.log('All Schedule:', res);
         });
     }
 
     getAllTimetable(): void {
         this.teacherSchedulerService.getAllTimetable().subscribe(res => {
+            this.dataSource = res;
             console.log('All Schedule:', res);
         });
     }
