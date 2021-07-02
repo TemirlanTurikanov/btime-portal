@@ -4,7 +4,6 @@ import {AuthService} from '../../services';
 import {routes} from '../../../../consts';
 import {HttpClient} from '@angular/common/http';
 import {error} from '@angular/compiler/src/util';
-import {Observable} from 'rxjs/dist/types';
 
 @Component({
     selector: 'app-auth-page',
@@ -15,8 +14,8 @@ export class AuthPageComponent {
     public todayDate: Date = new Date();
     public routers: typeof routes = routes;
     public authCred = {
-        username: 'Yermek',
-        password: '123'
+        username: 'Tima',
+        password: 'password'
     };
 
     constructor(private service: AuthService,
@@ -34,7 +33,6 @@ export class AuthPageComponent {
             // this.router.navigate([this.routers.DASHBOARD]).then();
         // });
     }
-
 
     public sendSignForm(): void {
 

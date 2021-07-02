@@ -6,8 +6,8 @@ import {Observable} from 'rxjs/dist/types';
     providedIn: 'root'
 })
 
-export class TeacherJournalService {
-    private readonly STUDENT_WS_CONTROLLER = 'journal/api/private/v1/journal';
+    export class TeacherJournalService {
+    private readonly STUDENT_WS_CONTROLLER = 'gateway/journal/api/private/v1/journal';
     // private readonly STUDENT_WS_CONTROLLER = '/api/private/v1/teacher/journal/lesson';
 
     constructor(private http: HttpClient) {

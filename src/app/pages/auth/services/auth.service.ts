@@ -35,24 +35,23 @@ export class AuthService {
 
             console.log(authData);
             console.log(res.headers.get('authorization'));
-
             if (res.status === 200) {
                 localStorage.setItem('token', res.headers.get('authorization'));
-
-                this.getCurrentUserInfo().subscribe(curUser => {
-                    console.log('User: ', curUser);
-                    localStorage.setItem('user', JSON.stringify(authCred.username));
-                    this.router.navigate([this.routers.DASHBOARD]).then();
-                });
-
+                // this.getCurrentUserInfo().subscribe(curUser => {
+                //     console.log('User: ', curUser);
+                //     localStorage.setItem('user', JSON.stringify(curUser));
+                this.router.navigate([this.routers.DASHBOARD]).then();
+                // });
             }
         });
 
     }
 
     public getCurrentUserInfo(): Observable<any> {
-        return this.http.get('/gateway/timetable-service/token/current', this.HTTP_OPTIONS());
-    }
+            return this.http.get('/gateway/timetable-service/token/current', this.HTTP_OPTIONS());
+            return this.http.get('/gateway/timetable-service/token/current');
+        // return null;
+        }
 
     public signOut(): void {
         localStorage.removeItem('token');
