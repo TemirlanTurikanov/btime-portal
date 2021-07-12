@@ -3,6 +3,8 @@ import {NgModule} from '@angular/core';
 import {DashboardPageComponent} from './pages/dashboard/containers';
 import {NotFoundComponent} from './pages/not-found/not-found.component';
 import {AuthGuard} from './pages/auth/guards';
+import {BpmProcessComponent} from './pages/bpm/bpm-process.component';
+import {BpmProcessModule} from './pages/bpm/bpm-process.module';
 
 const routes: Routes = [
     {
@@ -66,6 +68,12 @@ const routes: Routes = [
         loadChildren: () => import('./pages/teacher-dashboard/teacher-dashboard.module').then(m => m.TeacherDashboardModule)
     },
     {
+        path: 'bpm',
+        pathMatch: 'full',
+        canActivate: [AuthGuard],
+        loadChildren: () => import('./pages/bpm/bpm-process.module').then(m => m.BpmProcessModule)
+    },
+    {
         path: 'notification',
         pathMatch: 'full',
         canActivate: [AuthGuard],
@@ -87,7 +95,8 @@ const routes: Routes = [
     {
         path: '**',
         redirectTo: '404'
-    }
+    },
+
 ];
 
 @NgModule({
