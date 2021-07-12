@@ -1,4 +1,4 @@
 export interface PieChartData {
-  series: number[],
-  labels: string[]
+  series: number[];
+  labels: string[];
 }

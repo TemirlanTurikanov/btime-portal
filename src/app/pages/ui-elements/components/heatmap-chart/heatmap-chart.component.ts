@@ -39,7 +39,7 @@ export class HeatmapChartComponent implements OnInit {
   public apexHeatmapChartOptions: Partial<ChartOptions>;
 
   public ngOnInit(): void {
-    this.initChart()
+    this.initChart();
   }
 
   public initChart(): void {

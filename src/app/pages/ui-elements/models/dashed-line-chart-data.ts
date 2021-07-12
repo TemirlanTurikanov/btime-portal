@@ -1,9 +1,9 @@
 export interface DashedLineChartData {
-  series: Series[],
-  categories: string[]
+  series: Series[];
+  categories: string[];
 }
 
 interface Series {
-  name: string,
-  data: number[]
+  name: string;
+  data: number[];
 }

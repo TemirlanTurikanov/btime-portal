@@ -125,7 +125,7 @@ export class DailyLineChartComponent implements OnInit, AfterViewInit {
                     stops: [0, 100, 100, 100]
                 }
             },
-            labels: labels,
+            labels,
             xaxis: {
                 type: 'datetime',
                 labels: {
@@ -154,7 +154,7 @@ export class DailyLineChartComponent implements OnInit, AfterViewInit {
                 }
             }
         };
-    };
+    }
 
     public changedMatSelectionValue() {
         switch (this.selectedMatSelectValue) {

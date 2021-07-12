@@ -15,10 +15,10 @@ import {
   styleUrls: ['./charts-page.component.scss']
 })
 export class ChartsPageComponent {
-  public lineChartData$: Observable<LineChartData>
-  public dashedLineChartData$: Observable<DashedLineChartData>
-  public pieChartData$: Observable<PieChartData>
-  public heatmapChartData$: Observable<HeatmapChartData>
+  public lineChartData$: Observable<LineChartData>;
+  public dashedLineChartData$: Observable<DashedLineChartData>;
+  public pieChartData$: Observable<PieChartData>;
+  public heatmapChartData$: Observable<HeatmapChartData>;
 
   constructor(private service: ChartsService) {
     this.lineChartData$ = this.service.loadLineChartData();

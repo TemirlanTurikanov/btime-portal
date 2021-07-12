@@ -52,7 +52,7 @@ export class ServerChartComponent implements OnInit {
       this.serverChartData.firstDataTitle,
       this.serverChartData.secondDataTitle,
       this.serverChartData.thirdDataTitle,
-    ]
+    ];
   }
 
   public initChart(data: number[], color: string): Partial<ChartOptions> {
@@ -70,7 +70,7 @@ export class ServerChartComponent implements OnInit {
       series: [
         {
           name: 'STOCK ABC',
-          data: data
+          data
         }
       ],
       colors: [color],

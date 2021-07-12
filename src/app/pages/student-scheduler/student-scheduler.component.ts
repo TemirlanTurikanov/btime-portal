@@ -8,7 +8,7 @@ import {StudentTimetableService} from '../../shared/service/student/student-time
 })
 export class StudentSchedulerComponent implements OnInit {
     public displayedColumns: string[] = ['1', '2', '3', '4', '5', '6'];
-    //public dataSource =  [];
+    // public dataSource =  [];
 
     public dataSource =  [
         {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {StudentWsService} from "../../../shared/service/student/student-ws.service";
+import {StudentWsService} from '../../../shared/service/student/student-ws.service';
 
 @Component({
   selector: 'app-my-lessons-list',
@@ -18,7 +18,7 @@ export class MyLessonsListComponent implements OnInit {
   getMyCources() {
     this.studentWsService.getMyCources(1).subscribe(res => {
       this.list = res;
-    })
+    });
   }
 
 }

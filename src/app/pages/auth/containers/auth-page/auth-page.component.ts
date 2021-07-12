@@ -14,8 +14,8 @@ export class AuthPageComponent {
     public todayDate: Date = new Date();
     public routers: typeof routes = routes;
     public authCred = {
-        username: 'Tima',
-        password: 'password'
+        username: 'a',
+        password: '123'
     };
 
     constructor(private service: AuthService,
