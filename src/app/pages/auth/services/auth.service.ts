@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Observable, of} from 'rxjs';
+import {Observable} from 'rxjs';
 
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {routes} from '../../../consts';
@@ -48,8 +48,7 @@ export class AuthService {
     }
 
     public getCurrentUserInfo(): Observable<any> {
-            return this.http.get('/gateway/timetable-service/token/current', this.HTTP_OPTIONS());
-            return this.http.get('/gateway/timetable-service/token/current');
+            return this.http.get('/gateway/current', this.HTTP_OPTIONS());
         // return null;
         }
 
